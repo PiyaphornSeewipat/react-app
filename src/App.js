@@ -1,34 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 import Button from './Button';
-
+import './App.css';
+import Header from './components/Header';
+import Sibeber from './components/Sibeber';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import User from './pages/User';
+import About from './pages/About';
 
 function App() {
-  const [count, setCount] = setCount(10);
-  const name = "Hello";
-  const employees = [
-    { name: "AAA", email: "aaaa@gmail.com", age: 19},
-    { name: "BBB", email: "bbbb@gmail.com", age: 18},
-    { name: "CCC", email: "cccc@gmail.com", age: 20}
-  ]
-  console.log(employees);
+  
   return (
-    <>
-    <div className="App">
-      <h1>{count}</h1>
-      <Button onCilck={() => setCount(count + 1)}>Count ++</Button>
-      {employees.map((em, index) => (
-        <li key={index}>
-          ชื่อพนักงาน: {em.name} | อีเมล์: {em.email} | อายุ: {em.age}
-        </li>
-      ))}
-      <h1>Hello</h1>
-      <Button text = "OK"/>
-      <Button text = "Cancel"/>
- 
-    </div>
-    </>
+    
+      <BrowserRouter>
+        <div className='flex'>
+          <Sibeber/>
+          <div className='flex-1'>
+            <Header/>
+            <Routes>
+              <Route path='/' element={<Dashboard />} />
+              <Route path='/user' element={<User />} />
+              <Route path='/about' element={<About />} />
 
+            </Routes>
+
+          </div>
+
+        </div>
+      </BrowserRouter>
+      
+    
   );
 }
 
