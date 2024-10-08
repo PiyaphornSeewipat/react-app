@@ -1,7 +1,7 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 
-export default function Sibeber() {
+export default function Sideber() {
     return (
         <>    
 
@@ -13,12 +13,21 @@ export default function Sibeber() {
                 <Link to='/' className='block p-4 hover:bg-gray-700'>
                     Dashboard
                 </Link>
+                <Link to='/myblog' className='block p-4 hover:bg-gray-700'>
+                   จัดการโพส
+                </Link>
                 <Link to='/user' className='block p-4 hover:bg-gray-700'>
                     User
                 </Link>
                 <Link to='/about' className='block p-4 hover:bg-gray-700'>
                     About
                 </Link>
+                <Link to="/account" className="block py-3 px-4 hover:bg-gray-700">
+                จัดการบัญชี
+                </Link>
+
+
+
 
             </nav>
 
